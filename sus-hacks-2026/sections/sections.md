@@ -1,0 +1,1 @@
+This folder is for the individual parts of the hackathon page (Hero Banner, About etc.)
