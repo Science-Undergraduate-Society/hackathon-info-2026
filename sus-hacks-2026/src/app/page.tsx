@@ -17,20 +17,20 @@ export default function Home() {
           <img
             src="/images/logo.png"
             alt="Logo"
-            className="object-contain h-auto mb-6 w-40"
+            className="object-contain h-auto mb-6 mt-16 w-40"
           />
           <div className="absolute bottom-0 left-0 w-full h-32 z-1 bg-gradient-to-b from-transparent to-[#7A4F8B]" />
 
-          <span className="z-10 uppercase font-extrabold flex gap-4 leading-none text-center text-[100px] max-xl:text-[80px]">
+          <span className="z-10 uppercase font-extrabold flex gap-4 leading-none text-center text-[96px] max-xl:text-[80px]">
             <span>HACK</span>
             <span className="self-start leading-[1] text-[60px] max-xl:text-[40px]">THE</span>
             <span>COAST</span>
           </span>
 
           <p className="z-10 font-semibold text-center mt-4 text-[48px] max-xl:text-[38px]">
-            UBC Science’s first-ever Hackathon
+            UBC Science Undergraduate Society’s <br/> first-ever hackathon!  
           </p>
-          <p className="z-10 text-[#833872] font-semibold text-center mt-2 text-[40px] max-xl:text-[30px]">
+          <p className="z-10 text-[#833872] text-shadow-lg font-semibold text-center mt-2 text-[40px] max-xl:text-[30px]">
             February 7-8, 2026
           </p>
 
