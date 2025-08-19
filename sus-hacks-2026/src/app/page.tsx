@@ -1,8 +1,12 @@
 import Image from "next/image";
+import Navbar from "../../components/navbar";
 
 export default function Home() {
   return (
     <div className="font-sans font-figtree text-[#FFDEB1]">
+      {/* Navbar Component */}
+      <Navbar />
+
       {/* Background image at original height */}
       <div className="relative w-full">
         <img
@@ -17,7 +21,7 @@ export default function Home() {
           <img
             src="/images/logo.png"
             alt="Logo"
-            className="object-contain h-auto mb-6 mt-16 w-40"
+            className="object-contain h-auto mb-6 w-40"
           />
           <div className="absolute bottom-0 left-0 w-full h-32 z-1 bg-gradient-to-b from-transparent to-[#7A4F8B]" />
 
@@ -36,15 +40,20 @@ export default function Home() {
 
           {/* Call to Action */}
           <div className="z-10 max-w-[728px] mt-8 rounded-[20px] text-[20px] p-8 flex flex-wrap justify-center gap-4 bg-gradient-to-br from-[rgba(52,42,127,0.8)] to-[rgba(36,8,53,0.8)] max-xl:text-[18px]">
-            <button className="leading-none border-2 w-[198px] rounded-[20px] p-3 bg-[#34144A] opacity-100">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdHaRMvV5J7BQl_-eMV1oWkQStbs-9YYsLxhMMQX3MIZku6NQ/viewform" 
+              className="leading-none border-2 w-[198px] rounded-[20px] p-3 bg-[#34144A] opacity-100 cursor-pointer text-center"
+              target="_blank" rel="noopener noreferrer"
+            >
               Interested? Let us know!
-            </button>
-            <button className="leading-none border-2 w-[198px] rounded-[20px] p-3 bg-[#FFDEB1] text-[#34144A] opacity-100">
+            </a>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSehHDfo4VJY3rCKPy72TPAkk8X69DnI5SKLloAPd6pcF1eTig/viewform?usp=sharing&ouid=111247673375906645986" 
+              className="leading-none border-2 w-[198px] rounded-[20px] p-3 bg-[#FFDEB1] text-[#34144A] opacity-100 cursor-pointer text-center mx-auto"
+              target="_blank" rel="noopener noreferrer"
+            >
               Interested in Sponsoring us?
-            </button>
-            <button className="leading-none border-2 w-[198px] rounded-[20px] p-3 bg-[#34144A] opacity-100">
-              Learn More
-            </button>
+            </a>
           </div>
         </div>
       </div>
