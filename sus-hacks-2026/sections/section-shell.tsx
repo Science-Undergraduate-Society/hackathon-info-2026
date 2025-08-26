@@ -3,7 +3,6 @@ import React from "react";
 export default function SectionShell({
     children,
     className = "",
-    /** Scalable top padding for the content area. Override per usage if needed. */
     topPadding = "clamp(40px, 12vh, 144px)",
 }: React.PropsWithChildren<{ className?: string; topPadding?: string }>) {
     return (
@@ -19,11 +18,10 @@ export default function SectionShell({
                     backgroundImage: "url('/images/gradient-background.png')",
                     backgroundRepeat: "repeat-y",
                     backgroundPosition: "top center",
-                    backgroundSize: "100% auto", // full width, natural height; repeats vertically
+                    backgroundSize: "100% auto",
                 }}
             />
 
-            {/* Content with scalable top padding */}
             <div className="relative z-10" style={{ paddingTop: topPadding }}>
                 {children}
             </div>
