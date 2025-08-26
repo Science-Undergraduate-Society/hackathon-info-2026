@@ -12,7 +12,6 @@ export default function WhatToExpect() {
                 </p>
             </div>
 
-            {/* Slightly narrower roadmap container */}
             <div className="max-w-screen-lg mx-auto px-6 mt-8 md:mt-12">
                 <img
                     src="/images/expectation-roadmap.png"
