@@ -1,41 +1,30 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
-export default function DarkModeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+type Theme = "light" | "dark";
 
+interface DarkModeToggleProps {
+  theme: Theme;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+}
+
+export default function DarkModeToggle({ theme, setTheme }: DarkModeToggleProps) {
+  // Update DOM & localStorage whenever theme changes
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
+    console.log("useEffect running, theme is now:", theme);
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const toggleTheme = () => {
-    if (theme === "dark") {
-      localStorage.theme = "light";
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
-    } else {
-      localStorage.theme = "dark";
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
+    setTheme((prev: Theme) => (prev === "dark" ? "light" : "dark"));
   };
 
   return (
     <button
       onClick={toggleTheme}
-      className="bg-purple-50 dark:bg-gray-800 h-10 w-10 rounded-full flex items-center justify-center shadow-md"
+      className="bg-purple-50 dark:bg-gray-800 h-10 w-10 rounded-full flex items-center justify-center shadow-md cursor-pointer hover:shadow-2xl hover:scale-105 transition-transform duration-300"
     >
       {theme === "dark" ? (
         <FontAwesomeIcon icon={faSun} size="lg" className="text-yellow-500" />
