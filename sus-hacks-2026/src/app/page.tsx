@@ -113,7 +113,7 @@ export default function Home() {
         />
 
         {/* Content */}
-        <div className="mb-50 relative z-10">
+        <div className="mb-50 relative z-30">
           <span className="text-[48px] font-bold text-center max-xl:text-[40px]">
             Dive into Hack the Coast
           </span>
@@ -129,7 +129,7 @@ export default function Home() {
             curiosity and we’ll provide the rest.
           </p>
         </div>
-        <div>
+        <div className="z-30">
           <span className="text-[48px] font-bold text-center max-xl:text-[40px]">
             So... what is Hack the Coast?
           </span>
