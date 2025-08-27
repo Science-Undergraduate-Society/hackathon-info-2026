@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SectionShell({
+export default function BottomSectionShell({
     children,
     className = "",
     topPadding = "clamp(40px, 12vh, 144px)",
