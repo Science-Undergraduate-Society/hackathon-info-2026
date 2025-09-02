@@ -12,30 +12,31 @@ import Card from "@/components/card";
 
 export default function WhoItsFor() {
     return(
-        <div className="relative bg-[#34144A] p-20 pb-80 font-figtree text-center flex flex-col">
+        <div className="pt-20 bg-[#34144A]">
+        <div className="relative bg-[#34144A] p-10 font-figtree text-center flex flex-col max-xl:p-10">
             <img
                 src="/images/skyline.png"
                 alt="Background graphic"
                 className="absolute bottom-0 right-0 w-full pointer-events-none"
             />
-            <div className="relative p-30 px-20 font-figtree text-center flex flex-col dark:text-[#FFC2DA]">
+            <div className="relative p-30 px-20 font-figtree text-center flex flex-col max-xl:p-5 px-10">
                 <div className="mb-50 relative z-10">
-                    <span className="text-[48px] font-bold text-center">
+                    <span className="font-bold text-center text-[clamp(1.75rem,4.5vw,3.25rem)]">
                         Who is Hack the Coast For?
                     </span>
-                    <p className="mt-8 text-center text-[28px] mx-auto max-xl:text-[18px]">
+                    <p className="mt-8 text-center mx-auto text-[clamp(1rem,1.8vw,1.75rem)]">
                         This hackathon is for everyone: first-timers, veterans, and the
                         simply curious. You don’t need experience, just the excitement to
                         jump in.
                     </p>
-                    <p className="mt-8 text-center text-[28px] mx-auto max-xl:text-[18px]">
+                    <p className="mt-8 text-center mx-auto text-[clamp(1rem,1.8vw,1.75rem)]">
                         We aim to create an environment where experienced hackers can
                         challenge themselves, and first-timers feel supported through
                         mentorship and workshops. You’ll get support, mentorship, and the
                         freedom to take on a role that fits you. No gatekeeping, no
                         experience required, and no cost to participate.
                     </p>
-                    <div className="grid grid-rows-2 grid-cols-3 gap-10 mt-20">
+                    <div className="grid grid-rows-2 grid-cols-3 gap-10 mt-20 max-xl:grid-cols-1">
                     <Card
                         icon={faLeaf}
                         title="First-Time Hacker"
@@ -69,6 +70,7 @@ export default function WhoItsFor() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
