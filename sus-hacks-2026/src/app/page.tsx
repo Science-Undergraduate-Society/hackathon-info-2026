@@ -105,34 +105,49 @@ export default function Home() {
           >
             <button
               className={`leading-none border-2 w-[198px] rounded-[20px] p-3 opacity-100
-      ${
-        theme === "dark"
-          ? "bg-[#34144A] text-[#FFC2DA]"
-          : "bg-[#34144A] text-[#FFDEB1]"
-      }`}
+              ${
+                theme === "dark"
+                  ? "bg-[#34144A] text-[#FFC2DA]"
+                  : "bg-[#34144A] text-[#FFDEB1]"
+              }`}
             >
-              Interested? Let us know!
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdHaRMvV5J7BQl_-eMV1oWkQStbs-9YYsLxhMMQX3MIZku6NQ/viewform" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover"
+              >
+                Interested in competing?
+              </a>
             </button>
+
             <button
               className={`leading-none border-2 w-[198px] rounded-[20px] p-3 opacity-100
-      ${
-        theme === "dark"
-          ? "bg-[#FFC2DA] text-[#34144A]"
-          : "bg-[#FFDEB1] text-[#34144A]"
-      }`}
+              ${
+                theme === "dark"
+                  ? "bg-[#FFC2DA] text-[#34144A]"
+                  : "bg-[#FFDEB1] text-[#34144A]"
+              }`}
             >
-              Interested in Sponsoring us?
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSehHDfo4VJY3rCKPy72TPAkk8X69DnI5SKLloAPd6pcF1eTig/viewform" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover"
+              >
+                Interested in sponsoring us?
+              </a>
             </button>
-            <button
+            {/* <button
               className={`leading-none border-2 w-[198px] rounded-[20px] p-3 opacity-100
-      ${
-        theme === "dark"
-          ? "bg-[#34144A] text-[#FFC2DA]"
-          : "bg-[#34144A] text-[#FFDEB1]"
-      }`}
-            >
+              ${
+                theme === "dark"
+                  ? "bg-[#34144A] text-[#FFC2DA]"
+                  : "bg-[#34144A] text-[#FFDEB1]"
+              }`}
+                    >
               Learn More
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
