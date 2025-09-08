@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import DarkModeToggle from "../components/darkModeToggle";
+import { ChevronUp } from "lucide-react"
 
 // Top Sections
 import WhoItsFor from "../../sections/top-section-components/who-its-for";
@@ -26,15 +27,47 @@ const getInitialTheme = (): Theme => {
 
 export default function Home() {
   const [theme, setTheme] = useState<Theme>("light"); // default for SSR
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false); // check if mounted
+  const [arrowVisible, setArrowVisible] = useState(false); // visibility for up arrow
 
+  /**
+   * For first render:
+   *  - get initial theme from system settings
+   */
   useEffect(() => {
-    // Run only on client
     setTheme(getInitialTheme());
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // don't render anything until client mounts
+  /**
+   * Logic for up arrow - determines its visibility
+   */
+  useEffect(() => {
+    const toggleVisiblity = () => {
+      if (window.scrollY > 300) {
+        setArrowVisible(true);
+      } else {
+        setArrowVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisiblity);
+    return () => window.removeEventListener("scroll", toggleVisiblity);
+  }, []);
+
+  /**
+   * Function for onClick of up arrow
+   */
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  /**
+   * Render
+   */
+  if (!mounted) {
+    return null; // <-- safe to return here AFTER all hooks
+  }
 
   return (
     <div
@@ -42,9 +75,22 @@ export default function Home() {
         theme === "dark" ? "text-[#FFC2DA]" : "text-[#FFDEB1]"
       }`}
     >
+      {/* Toggle for theme */}
       <div className="fixed top-4 right-4 z-50 ">
         <DarkModeToggle theme={theme} setTheme={setTheme} />
       </div>
+      
+      {/* Up arrow for page scroll */}
+      {arrowVisible && (
+        <button
+          onClick={scrollToTop}
+          className="z-100 fixed bottom-6 left-1/2 -translate-x-1/2 
+                    p-3 rounded-full bg-[#47D5DA] text-white shadow-lg 
+                    animate-bounce cursor-pointer "
+        >
+          <ChevronUp />
+        </button>
+      )}
 
       <div className="relative w-full max-sm:pb-[clamp(100px,calc(200px+(500px-100vw)),300px)] bg-[#34144A]">
         <img
