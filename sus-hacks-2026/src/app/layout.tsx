@@ -20,11 +20,6 @@ const figtree = Figtree({
 export const metadata: Metadata = {
   title: "Hack the Coast 2026",
   description: "UBC SUS's First Hackathon",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
