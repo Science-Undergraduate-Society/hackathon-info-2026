@@ -85,7 +85,7 @@ export default function Home() {
         <button
           onClick={scrollToTop}
           className="z-100 fixed bottom-6 left-1/2 -translate-x-1/2 
-                    p-3 rounded-full bg-[#47D5DA] text-white shadow-lg 
+                    p-3 rounded-full bg-[#FFC2DA] text-white shadow-lg 
                     animate-bounce cursor-pointer "
         >
           <ChevronUp />
