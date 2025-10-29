@@ -134,7 +134,7 @@ export default function Home() {
             className={`z-10 font-semibold text-center mt-4 text-[clamp(24px,4.5vw,48px)]
     ${theme === "dark" ? "text-[#CCE4B4]" : "text-[#FFDEB1]"}`}
           >
-            UBC Science’s first-ever Hackathon
+            UBC Science Undergraduate Society&apos;s first-ever Hackathon
           </p>
 
           <p
