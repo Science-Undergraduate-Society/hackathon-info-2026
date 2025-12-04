@@ -24,7 +24,7 @@ export default function DarkModeToggle({ theme, setTheme }: DarkModeToggleProps)
   return (
     <button
       onClick={toggleTheme}
-      className="bg-purple-50 dark:bg-gray-800 h-10 w-10 rounded-full flex items-center justify-center shadow-md cursor-pointer hover:shadow-2xl hover:scale-105 transition-transform duration-300"
+      className="bg-purple-50 h-10 w-10 rounded-full flex items-center justify-center shadow-md cursor-pointer hover:shadow-2xl hover:scale-105 transition-transform duration-300"
     >
       {theme === "dark" ? (
         <FontAwesomeIcon icon={faSun} size="lg" className="text-yellow-500" />

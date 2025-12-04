@@ -43,7 +43,7 @@ export default function FAQ() {
     const rowWidthClass = "mx-auto w-full max-w-[clamp(52rem,72vw,72rem)]";
 
     return (
-        <div className="text-[#FFDEB1]">
+        <div className="">
             <div className="w-full max-w-screen-2xl mx-auto px-6 md:px-16 xl:px-28 pt-[clamp(64px,18vh,240px)]">
                 <h2 className="text-center font-extrabold leading-tight text-[clamp(1.9rem,5vw,3.5rem)]">
                     FAQ
