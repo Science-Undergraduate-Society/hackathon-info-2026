@@ -106,7 +106,7 @@ export default function Home() {
         />
 
         {/* Content over image */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 pb-24">
+        <div className="absolute inset-0 z-10 flex flex-col items-center pt-20 max-md:justify-center max-md:pt-0 px-4 pb-24">
           <img
             src={
               theme === "dark" ? "/images/dark-logo.png" : "/images/logo.png"
@@ -148,7 +148,7 @@ export default function Home() {
           <div
             className={`z-10 max-w-[619px] mt-8 rounded-[17px] p-7 flex flex-nowrap justify-center gap-3 
     bg-gradient-to-br from-[rgba(52,42,127,0.8)] to-[rgba(36,8,53,0.8)] 
-    text-[clamp(0.6rem,1.3vw,0.939rem)] max-md:p-2 max-md:bg-none max-md:gap-2`}
+    text-[clamp(0.65rem,1.3vw,1rem)] max-md:p-2 max-md:bg-none max-md:gap-2`}
           >
             <button
               className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-pink-500/50
