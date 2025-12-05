@@ -45,11 +45,11 @@ export default function FAQ() {
     return (
         <div className="">
             <div className="w-full max-w-screen-2xl mx-auto px-6 md:px-16 xl:px-28 pt-[clamp(64px,18vh,240px)]">
-                <h2 className="text-center font-extrabold leading-tight text-[clamp(1.9rem,5vw,3.5rem)]">
+                <h2 className="text-center font-extrabold leading-tight text-[clamp(1.615rem,4.25vw,2.975rem)] animate-fade-in-up">
                     FAQ
                 </h2>
 
-                <div className="mt-8 md:mt-12">
+                <div className="mt-8 md:mt-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     {FAQ_DATA.map((item, idx) => {
                         const isOpen = open === idx;
                         return (

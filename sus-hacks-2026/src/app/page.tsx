@@ -10,6 +10,7 @@ import WhoItsFor from "../../sections/top-section-components/who-its-for";
 
 // Bottom Sections
 import WhatToExpect from "../../sections/bottom-section-components/what-to-expect";
+import Itinerary from "../../sections/bottom-section-components/itinerary";
 import FAQ from "../../sections/bottom-section-components/faq";
 import Footer from "../../sections/bottom-section-components/footer";
 import MeetOurTeam from "../../sections/bottom-section-components/meet-our-team";
@@ -78,12 +79,7 @@ export default function Home() {
       }`}
     >
       {/* Navbar */}
-      <Navbar theme={theme} />
-      
-      {/* Toggle for theme */}
-      <div className="fixed top-4 right-4 z-50 ">
-        <DarkModeToggle theme={theme} setTheme={setTheme} />
-      </div>
+      <Navbar theme={theme} setTheme={setTheme} />
       
       {/* Up arrow for page scroll */}
       {arrowVisible && (
@@ -97,7 +93,7 @@ export default function Home() {
         </button>
       )}
 
-      <div id="home" className="relative w-full max-sm:pb-[clamp(100px,calc(200px+(500px-100vw)),300px)] bg-[#34144A]">
+      <div id="home" className="relative w-full bg-[#34144A]">
         <img
           src={
             theme === "dark"
@@ -110,13 +106,13 @@ export default function Home() {
         />
 
         {/* Content over image */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center pt-12 px-4">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 pb-24">
           <img
             src={
               theme === "dark" ? "/images/dark-logo.png" : "/images/logo.png"
             }
             alt="Logo"
-            className="object-contain h-auto mb-6 w-34 max-xl:w-17"
+            className="object-contain h-auto mb-6 w-34 max-xl:w-17 transition-all duration-500 hover:scale-110 hover:rotate-6 cursor-pointer max-md:hidden"
           />
           <div
             className="absolute bottom-0 left-0 w-full z-1
@@ -125,59 +121,77 @@ export default function Home() {
           />
 
           <span
-            className={`z-10 uppercase font-extrabold flex gap-4 leading-none text-center text-[clamp(34px,5.1vw,85px)] max-lg:gap-1
+            className={`z-10 uppercase font-extrabold flex gap-4 leading-none text-center text-[clamp(28.9px,4.335vw,72.25px)] max-lg:gap-1 max-md:mt-15 transition-colors duration-500
     ${theme === "dark" ? "text-[#E87FD9]" : "text-[#FFDEB1]"}`}
           >
             <span>HACK</span>
-            <span className="self-start leading-[1] text-[clamp(17px,3.4vw,51px)]">
+            <span className="self-start leading-[1] text-[clamp(14.45px,2.89vw,43.35px)]">
               THE
             </span>
             <span>COAST</span>
           </span>
 
           <p
-            className={`z-10 font-semibold text-center mt-4 text-[clamp(20.4px,3.825vw,40.8px)]
+            className={`z-10 font-semibold text-center mt-4 text-[clamp(17.34px,3.25vw,34.68px)] transition-colors duration-500
     ${theme === "dark" ? "text-[#CCE4B4]" : "text-[#FFDEB1]"}`}
           >
             UBC Science Undergraduate Society&apos;s first-ever Hackathon
           </p>
 
           <p
-            className={`z-10 font-semibold text-center mt-2 text-[clamp(19.55px,3.825vw,34px)]
+            className={`z-10 font-semibold text-center mt-2 text-[clamp(16.62px,3.25vw,28.9px)] transition-colors duration-500
     ${theme === "dark" ? "text-[#E87FD9]" : "text-[#833872]"}`}
           >
             February 7-8, 2026
           </p>
 
           <div
-            className={`z-10 max-w-[619px] mt-8 rounded-[17px] p-7 flex flex-wrap justify-center gap-3 
+            className={`z-10 max-w-[619px] mt-8 rounded-[17px] p-7 flex flex-nowrap justify-center gap-3 
     bg-gradient-to-br from-[rgba(52,42,127,0.8)] to-[rgba(36,8,53,0.8)] 
-    text-[clamp(0.85rem,1.53vw,1.105rem)] max-md:p-3`}
+    text-[clamp(0.6rem,1.3vw,0.939rem)] max-md:p-2 max-md:bg-none max-md:gap-2`}
           >
             <button
-              className={`leading-none border-2 w-[168px] rounded-[17px] p-2.5 opacity-100
+              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-pink-500/50
               ${
                 theme === "dark"
-                  ? "bg-[#34144A] text-[#FFC2DA]"
-                  : "bg-[#34144A] text-[#FFDEB1]"
+                  ? "bg-[#E87FD9] text-[#34144A] border-[#E87FD9] hover:bg-[#FF9FED]"
+                  : "bg-[#CCE4B4] text-[#34144A] border-[#CCE4B4] hover:bg-[#D4F0C2]"
               }`}
             >
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdHaRMvV5J7BQl_-eMV1oWkQStbs-9YYsLxhMMQX3MIZku6NQ/viewform" 
+                href="https://hackthecoast.susubc.ca" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover"
               >
-                Interested in competing?
+                Hacker Applications
               </a>
             </button>
 
             <button
-              className={`leading-none border-2 w-[168px] rounded-[17px] p-2.5 opacity-100
+              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50
               ${
                 theme === "dark"
-                  ? "bg-[#FFC2DA] text-[#34144A]"
-                  : "bg-[#FFDEB1] text-[#34144A]"
+                  ? "bg-[#7A4F8B] text-[#FFC2DA] border-[#7A4F8B] hover:bg-[#8E5FA0]"
+                  : "bg-[#833872] text-[#FFDEB1] border-[#833872] hover:bg-[#9A4587]"
+              }`}
+            >
+              <a
+                href="https://docs.google.com/forms/d/1YLFxByN3PW6BRcyOJyunwSJKMYeQbX9MGGbzY1VJB3c/viewform?edit_requested=true&edit_requested=true" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover"
+              >
+                Mentor Applications
+              </a>
+            </button>
+
+            <button
+              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-orange-400/50
+              ${
+                theme === "dark"
+                  ? "bg-[#FFC2DA] text-[#34144A] border-[#FFC2DA] hover:bg-[#FFD4E8]"
+                  : "bg-[#FFDEB1] text-[#34144A] border-[#FFDEB1] hover:bg-[#FFE8C8]"
               }`}
             >
               <a
@@ -205,23 +219,26 @@ export default function Home() {
 
       {/* Top Sections */}
 
-      <div id="about">
+      <div id="about" className="transition-all duration-500">
         <GeneralInformation theme={theme} />
       </div>
-      <div id="who-its-for">
+      <div id="who-its-for" className="transition-all duration-500">
         <WhoItsFor theme={theme} />
       </div>
 
       {/* Bottom Sections */}
 
       <BottomSectionShell theme={theme}>
-        <div id="what-to-expect">
+        <div id="what-to-expect" className="transition-all duration-500">
           <WhatToExpect />
         </div>
-        <div id="faq">
+        <div id="schedule" className="transition-all duration-500">
+          <Itinerary />
+        </div>
+        <div id="faq" className="transition-all duration-500">
           <FAQ />
         </div>
-        <div id="team">
+        <div id="team" className="transition-all duration-500">
           <MeetOurTeam theme={theme} />
         </div>
         <Footer />

@@ -62,15 +62,15 @@ export default function MeetOurTeam({ theme }: Props) {
       />
 
       {/* Content overlay */}
-      <div className="absolute inset-0 flex flex-col items-center text-center px-6 sm:px-12 md:px-20 pt-24">
-        <h2 className="font-extrabold leading-tight text-[clamp(1.75rem,4.5vw,3.25rem)] z-30">
+      <div className="absolute inset-0 flex flex-col items-center text-center px-6 sm:px-12 md:px-20 pt-24 animate-fade-in-up">
+        <h2 className="font-extrabold leading-tight text-[clamp(1.4875rem,3.825vw,2.7625rem)] z-30">
           Meet Our Team
         </h2>
-        <p className="mt-3 md:mt-5 text-[clamp(1rem,1.8vw,1.75rem)] opacity-95 z-30">
+        <p className="mt-3 md:mt-5 text-[clamp(0.85rem,1.53vw,1.4875rem)] opacity-95 z-30">
           Meet the brains and heart behind Hack the Coast!
           <br />
-          We’re a crew of science lovers, tech enthusiasts, and event planners
-          excited to bring you UBC Science’s very first hackathon.
+          We're a crew of science lovers, tech enthusiasts, and event planners
+          excited to bring you UBC Science's very first hackathon.
         </p>
       </div>
 

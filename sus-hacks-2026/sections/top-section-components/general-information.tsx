@@ -27,39 +27,39 @@ export default function GeneralInformation({ theme }: GeneralInformationProps) {
             />
 
             {/* Content */}
-            <div className="mb-50 relative z-30">
-                <span className="font-bold text-center text-[clamp(1.75rem,4.5vw,3.25rem)]">
+            <div className="mb-50 relative z-30 animate-fade-in-up">
+                <span className="font-bold text-center text-[clamp(1.4875rem,3.825vw,2.7625rem)]">
                     Dive into Hack the Coast
                 </span>
-                <p className="mt-8 text-center text-[28px] mx-auto max-xl:text-[18px]">
+                <p className="mt-8 text-center text-[23.8px] mx-auto max-xl:text-[15.3px]">
                     Join us in-person February 7-8, 2026, for an incredible weekend of
                     ideas, creativity, and collaboration. Maybe you’ll code your first
                     app, sketch a new design, solve a big challenge, or just try
                     something completely new.
                 </p>
-                <p className="mt-8 text-center text-[28px] mx-auto max-xl:text-[18px]">
+                <p className="mt-8 text-center text-[23.8px] mx-auto max-xl:text-[15.3px]">
                     Hackathons aren’t about being the “best coder in the room.” They’re
                     about learning, experimenting, and creating together. Bring your
                     curiosity and we’ll provide the rest.
                 </p>
                 </div>
-                <div className="z-30">
-                <span className="font-bold text-center text-[clamp(1.75rem,4.5vw,3.25rem)]">
+                <div className="z-30 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <span className="font-bold text-center text-[clamp(1.4875rem,3.825vw,2.7625rem)]">
                     So... what is Hack the Coast?
                 </span>
-                <p className="mt-8 text-center mx-auto text-[clamp(1rem,1.8vw,1.75rem)]">
+                <p className="mt-8 text-center mx-auto text-[clamp(0.85rem,1.53vw,1.4875rem)]">
                     Hack the Coast is UBC Science’s first-ever hackathon, built to
                     connect disciplines, spark ideas, and give everyone a chance to
                     explore what’s possible.
                 </p>
-                <p className="mt-8 text-center text-[clamp(1rem,1.8vw,1.75rem)] mx-auto">
+                <p className="mt-8 text-center text-[clamp(0.85rem,1.53vw,1.4875rem)] mx-auto">
                     Think of it as a 24 hour playground for ideas. You’ll form a team,
                     dream up a project, and bring it to life: whether it’s an app, a
                     game, a website, or something no one’s seen before. Along the way,
                     you’ll learn from mentors, attend workshops, meet incredible people,
                     and get a LOT of free swag.
                 </p>
-                <p className="mt-8 text-center mx-auto text-[clamp(1rem,1.8vw,1.75rem)]">
+                <p className="mt-8 text-center mx-auto text-[clamp(0.85rem,1.53vw,1.4875rem)]">
                     Hosted by the Science Undergraduate Society, Hack the Coast is a
                     free, inclusive, and community-driven experience that welcomes you
                     as you are.

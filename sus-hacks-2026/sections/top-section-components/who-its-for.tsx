@@ -28,23 +28,23 @@ export default function WhoItsFor({ theme }: WhoItsForProps) {
                 className="absolute bottom-0 right-0 w-full pointer-events-none"
             />
             <div className="relative p-30 px-20 font-figtree text-center flex flex-col max-xl:p-5 px-10">
-                <div className="mb-50 relative z-10">
-                    <span className="font-bold text-center text-[clamp(1.75rem,4.5vw,3.25rem)]">
+                <div className="mb-50 relative z-10 animate-fade-in-up">
+                    <span className="font-bold text-center text-[clamp(1.4875rem,3.825vw,2.7625rem)]">
                         Who is Hack the Coast For?
                     </span>
-                    <p className="mt-8 text-center mx-auto text-[clamp(1rem,1.8vw,1.75rem)]">
+                    <p className="mt-8 text-center mx-auto text-[clamp(0.85rem,1.53vw,1.4875rem)]">
                         This hackathon is for everyone: first-timers, veterans, and the
                         simply curious. You don’t need experience, just the excitement to
                         jump in.
                     </p>
-                    <p className="mt-8 text-center mx-auto text-[clamp(1rem,1.8vw,1.75rem)]">
+                    <p className="mt-8 text-center mx-auto text-[clamp(0.85rem,1.53vw,1.4875rem)]">
                         We aim to create an environment where experienced hackers can
                         challenge themselves, and first-timers feel supported through
                         mentorship and workshops. You’ll get support, mentorship, and the
                         freedom to take on a role that fits you. No gatekeeping, no
                         experience required, and no cost to participate.
                     </p>
-                    <div className="grid grid-rows-2 grid-cols-3 gap-10 mt-20 max-xl:grid-cols-1">
+                    <div className="grid grid-rows-2 grid-cols-3 gap-10 mt-20 max-xl:grid-cols-1 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <Card
                         icon={faLeaf}
                         title="First-Time Hacker"
