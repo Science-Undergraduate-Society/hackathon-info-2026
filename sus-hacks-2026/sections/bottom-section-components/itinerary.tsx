@@ -17,7 +17,7 @@ type DaySchedule = {
 };
 
 export default function Itinerary() {
-  const [openDay, setOpenDay] = useState<number | null>(null);
+  const [openDay, setOpenDay] = useState<number | null>(0);
 
   const schedule: DaySchedule[] = [
     {
@@ -50,13 +50,8 @@ export default function Itinerary() {
           location: "Life Science Institute",
         },
         {
-          title: "Workshop: Led by Sponsor TBD",
+          title: "Workshop: Hardware",
           time: "2:00 PM",
-          location: "Life Science Institute",
-        },
-        {
-          title: "Workshop: UBC Muaythai Club",
-          time: "3:00 PM",
           location: "Life Science Institute",
         },
         {
@@ -65,7 +60,12 @@ export default function Itinerary() {
           location: "Life Science Institute",
         },
         {
-          title: "Networking Event",
+          title: "Workshop: UBC Muaythai Club",
+          time: "5:00 PM",
+          location: "Life Science Institute",
+        },
+        {
+          title: "Workship: Led by Sponsor TBD",
           time: "6:30 PM",
           location: "Life Science Institute",
         },
@@ -75,9 +75,9 @@ export default function Itinerary() {
           location: "Life Science Institute",
         },
         {
-          title: "Workshop: UBC Barista Club",
-          time: "11:00 PM",
-          location: "Life Science Institute",
+            title: "Workshop: Minigame: Speed Typing Competition",
+            time: "10:00 PM",
+            location: "Life Science Institute",
         },
         {
           title: "Midnight Snack",
@@ -96,28 +96,13 @@ export default function Itinerary() {
           location: "Life Science Institute",
         },
         {
-          title: "Workshop: Speed Typing Competition",
-          time: "2:00 AM",
-          location: "Life Science Institute",
-        },
-        {
-          title: "Online Multiplayer Games",
-          time: "4:00 AM",
-          location: "Life Science Institute",
-        },
-        {
-          title: "Workshop: UBC Pilates Club",
-          time: "6:30 AM",
-          location: "Life Science Institute",
-        },
-        {
-          title: "Breakfast",
+          title: "Workship: UBC Barista Club",
           time: "8:00 AM",
           location: "Life Science Institute",
         },
         {
-          title: "Workshop: LUSH",
-          time: "9:45 AM",
+          title: "Breakfast",
+          time: "9:00 AM",
           location: "Life Science Institute",
         },
         {
@@ -165,7 +150,7 @@ export default function Itinerary() {
   ];
 
   return (
-    <div className="pt-[clamp(64px,18vh,240px)]">
+    <div className="pt-[clamp(40px,9vh,120px)]">
       <div className="max-w-screen-xl mx-auto px-6 animate-fade-in-up">
         <h2 className="text-center font-extrabold leading-tight text-[clamp(1.4875rem,3.825vw,2.7625rem)]">
           Event Schedule
