@@ -10,12 +10,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Card from "@/components/card";
 
-export default function WhoItsFor() {
+interface WhoItsForProps {
+  theme: "light" | "dark";
+}
+
+export default function WhoItsFor({ theme }: WhoItsForProps) {
     return(
         <div className="pt-20 bg-[#34144A]">
         <div className="relative bg-[#34144A] p-10 font-figtree text-center flex flex-col max-xl:p-10">
             <img
-                src="/images/skyline.png"
+                src={
+                    theme === "dark"
+                      ? "/images/dark-skyline.png"
+                      : "/images/skyline.png"
+                  }
                 alt="Background graphic"
                 className="absolute bottom-0 right-0 w-full pointer-events-none"
             />

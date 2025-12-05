@@ -1,15 +1,27 @@
 import React from "react";
 
-export default function GeneralInformation() {
+type GeneralInformationProps = {
+    theme: "light" | "dark";
+  };
+
+export default function GeneralInformation({ theme }: GeneralInformationProps) {
     return (
         <div className="relative bg-[#34144A] p-30 px-40 font-figtree text-center flex flex-col max-xl:p-10">
             <img
-                src="/images/background-curve.png"
+                src={
+                    theme === "dark"
+                      ? "/images/dark-bg-curve.png"
+                      : "/images/background-curve.png"
+                  }
                 alt="Background graphic"
                 className="absolute top-10 right-0 z-20 w-[16%] pointer-events-none"
             />
             <img
-                src="/images/bckground-curve-2.png"
+            src={
+                theme === "dark"
+                  ? "/images/dark-bg-curve-2.png"
+                  : "/images/bckground-curve-2.png"
+              }
                 alt="Background graphic"
                 className="absolute top-150 left-0 z-20 w-[40%] pointer-events-none"
             />

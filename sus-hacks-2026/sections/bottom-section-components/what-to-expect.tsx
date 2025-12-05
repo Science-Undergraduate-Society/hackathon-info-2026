@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WhatToExpect() {
     return (
-        <div className="text-[#FFDEB1] pt-[clamp(40px,9vh,120px)]">
+        <div className=" pt-[clamp(40px,9vh,120px)]">
             <div className="max-w-screen-xl mx-auto px-6">
                 <h2 className="text-center font-extrabold leading-tight text-[clamp(1.75rem,4.5vw,3.25rem)]">
                     What to Expect

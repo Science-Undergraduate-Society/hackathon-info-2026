@@ -11,6 +11,7 @@ import WhoItsFor from "../../sections/top-section-components/who-its-for";
 import WhatToExpect from "../../sections/bottom-section-components/what-to-expect";
 import FAQ from "../../sections/bottom-section-components/faq";
 import Footer from "../../sections/bottom-section-components/footer";
+import MeetOurTeam from "../../sections/bottom-section-components/meet-our-team";
 import BottomSectionShell from "../../sections/bottom-section-components/bottom-section-shell";
 import GeneralInformation from "../../sections/top-section-components/general-information";
 
@@ -199,15 +200,16 @@ export default function Home() {
       </div>
 
       {/* Top Sections */}
-      
-      <GeneralInformation />
-      <WhoItsFor />
+
+      <GeneralInformation theme={theme} />
+      <WhoItsFor theme={theme} />
 
       {/* Bottom Sections */}
-      
-      <BottomSectionShell>
+
+      <BottomSectionShell theme={theme}>
         <WhatToExpect />
         <FAQ />
+        <MeetOurTeam theme={theme} />
         <Footer />
       </BottomSectionShell>
     </div>
