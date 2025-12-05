@@ -145,6 +145,13 @@ export default function Home() {
             February 7-8, 2026
           </p>
 
+          <p
+            className={`z-10 font-medium text-center mt-3 text-[clamp(14px,2.5vw,18px)] transition-colors duration-500
+    ${theme === "dark" ? "text-[#FFC2DA]" : "text-[#FFDEB1]"}`}
+          >
+            Applications open December 5, 2025 @ 12pm
+          </p>
+
           <div
             className={`z-10 max-w-[619px] mt-8 rounded-[17px] p-7 flex flex-nowrap justify-center gap-3 
     bg-gradient-to-br from-[rgba(52,42,127,0.8)] to-[rgba(36,8,53,0.8)] 
