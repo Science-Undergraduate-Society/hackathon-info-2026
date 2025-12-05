@@ -11,14 +11,14 @@ export default function MeetOurTeam({ theme }: Props) {
     {
       img: theme === "dark" ? "/images/dark-gondola-1.png" : "/images/gondola-1.png",
       name1: "Claire Zhang: Hackathon Co-Lead",
-      name2: "Carmen Choo: Hackathon Co-Lea",
+      name2: "Carmen Choo: Hackathon Co-Lead",
       name3: "Corbin Platti: Outreach Committee Lead",
       delay: "0s",
     },
     {
       img: theme === "dark" ? "/images/dark-gondola-2.png" : "/images/gondola-2.png",
       name1: "Ridhi: Logistics Committee Member",
-      name2: "Alan Wu: Logistics Committee Member",
+      name2: "Alan Wu: Logistics Committee & Developer",
       name3: "Hilary Chow: Logistics Committee Member",
       delay: "4s",
     },
@@ -26,7 +26,7 @@ export default function MeetOurTeam({ theme }: Props) {
       img: theme === "dark" ? "/images/dark-gondola-3.png" : "/images/gondola-3.png",
       name1: "Insha Majeed: Outreach Committee Member",
       name2: "Eric Song: Outreach Committee Member",
-      name3: "Lexi Wong",
+      name3: "Lexi Wong: Outreach Committee Member",
       delay: "8s",
     },
     {
@@ -40,7 +40,7 @@ export default function MeetOurTeam({ theme }: Props) {
       img: theme === "dark" ? "/images/dark-gondola-5.png" : "/images/gondola-5.png",
       name1: "Arnavdeep: Marketing Committee Lead",
       name2: "Ramayani: Marketing Committee Member",
-      name3: "Norinne: Marketing Committee Member & UX Designer",
+      name3: "Norinne: Marketing Committee & UX Designer",
       delay: "16s",
     },
     {
@@ -100,7 +100,7 @@ export default function MeetOurTeam({ theme }: Props) {
 
             {hoveredIndex === i && (
               <p
-                className={`absolute bottom-[5%] text-center text-sm md:text-base lg:text-md font-semibold ${
+                className={`absolute bottom-[8%] text-center text-[0.5rem] md:text-[0.625rem] lg:text-xs font-semibold ${
                   theme === "dark" ? "text-[#FFC2DA]" : "text-[#FFDEB1]"
                 }`}
                 style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}
