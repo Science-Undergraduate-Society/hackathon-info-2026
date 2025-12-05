@@ -2,12 +2,16 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import DarkModeToggle from "./darkModeToggle";
+
+type Theme = "light" | "dark";
 
 type NavbarProps = {
-  theme: "light" | "dark";
+  theme: Theme;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
 };
 
-export default function Navbar({ theme }: NavbarProps) {
+export default function Navbar({ theme, setTheme }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -15,6 +19,7 @@ export default function Navbar({ theme }: NavbarProps) {
     { name: "About", href: "#about" },
     { name: "Who It's For", href: "#who-its-for" },
     { name: "What to Expect", href: "#what-to-expect" },
+    { name: "Schedule", href: "#schedule" },
     { name: "FAQ", href: "#faq" },
     { name: "Team", href: "#team" },
   ];
@@ -31,7 +36,7 @@ export default function Navbar({ theme }: NavbarProps) {
     <nav
       className={`w-full z-40 transition-colors duration-300 ${
         theme === "dark"
-          ? "bg-[#7A4F8B]/95 text-[#FFC2DA]"
+          ? "bg-[#003476]/95 text-[#FFC2DA]"
           : "bg-[#7A4F8B]/95 text-[#FFDEB1]"
       } backdrop-blur-sm`}
     >
@@ -61,7 +66,7 @@ export default function Navbar({ theme }: NavbarProps) {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className={`px-2 py-1 rounded-md text-xs font-medium transition-all hover:scale-105 ${
+                className={`px-2 py-1 rounded-md text-sm font-medium transition-all hover:scale-105 ${
                   theme === "dark"
                     ? "hover:bg-[#E87FD9]/20"
                     : "hover:bg-[#FFDEB1]/20"
@@ -70,10 +75,12 @@ export default function Navbar({ theme }: NavbarProps) {
                 {link.name}
               </button>
             ))}
+            <DarkModeToggle theme={theme} setTheme={setTheme} />
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center gap-2">
+            <DarkModeToggle theme={theme} setTheme={setTheme} />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md hover:bg-white/10 transition-colors"
@@ -93,7 +100,7 @@ export default function Navbar({ theme }: NavbarProps) {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className={`block w-full text-left px-2 py-1 rounded-md text-sm font-medium transition-all ${
+                className={`block w-full text-left px-2 py-1 rounded-md text-base font-medium transition-all ${
                   theme === "dark"
                     ? "hover:bg-[#E87FD9]/20"
                     : "hover:bg-[#FFDEB1]/20"
