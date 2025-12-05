@@ -65,8 +65,8 @@ export default function Itinerary() {
           location: "Life Science Institute",
         },
         {
-          title: "Workship: Led by Sponsor TBD",
-          time: "6:30 PM",
+          title: "Workshop: Led by Sponsor TBD",
+          time: "6:00 PM",
           location: "Life Science Institute",
         },
         {
@@ -75,7 +75,7 @@ export default function Itinerary() {
           location: "Life Science Institute",
         },
         {
-            title: "Workshop: Minigame: Speed Typing Competition",
+            title: "Minigame: Speed Typing Competition",
             time: "10:00 PM",
             location: "Life Science Institute",
         },
@@ -96,18 +96,13 @@ export default function Itinerary() {
           location: "Life Science Institute",
         },
         {
-          title: "Workship: UBC Barista Club",
+          title: "Workshop: UBC Barista Club",
           time: "8:00 AM",
           location: "Life Science Institute",
         },
         {
           title: "Breakfast",
           time: "9:00 AM",
-          location: "Life Science Institute",
-        },
-        {
-          title: "Pitch Tips Crash Course",
-          time: "10:15 AM",
           location: "Life Science Institute",
         },
         {
