@@ -18,7 +18,7 @@ export default function MeetOurTeam({ theme }: Props) {
     {
       img: theme === "dark" ? "/images/dark-gondola-2.png" : "/images/gondola-2.png",
       name1: "Ridhi: Logistics Committee Member",
-      name2: "Alan: Logistics Committee Member",
+      name2: "Alan Wu: Logistics Committee Member",
       name3: "Hilary Chow: Logistics Committee Member",
       delay: "4s",
     },
@@ -26,7 +26,7 @@ export default function MeetOurTeam({ theme }: Props) {
       img: theme === "dark" ? "/images/dark-gondola-3.png" : "/images/gondola-3.png",
       name1: "Insha Majeed: Outreach Committee Member",
       name2: "Eric Song: Outreach Committee Member",
-      name3: "",
+      name3: "Lexi Wong",
       delay: "8s",
     },
     {
@@ -46,7 +46,7 @@ export default function MeetOurTeam({ theme }: Props) {
     {
       img: theme === "dark" ? "/images/dark-gondola-6.png" : "/images/gondola-6.png",
       name1: "David Lim: Developer Lead",
-      name2: "Jonathan: Developer",
+      name2: "Eojin Lee: Developer",
       name3: "Ruhani Mittal: Developer",
       delay: "20s",
     },
