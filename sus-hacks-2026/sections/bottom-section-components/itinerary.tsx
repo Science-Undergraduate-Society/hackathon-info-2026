@@ -17,7 +17,7 @@ type DaySchedule = {
 };
 
 export default function Itinerary() {
-  const [openDay, setOpenDay] = useState<number | null>(0);
+  const [openDay, setOpenDay] = useState<number | null>(null);
 
   const schedule: DaySchedule[] = [
     {

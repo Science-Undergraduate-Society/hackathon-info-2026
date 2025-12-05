@@ -106,7 +106,7 @@ export default function Home() {
         />
 
         {/* Content over image */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center pt-40 max-md:justify-center max-md:pt-0 px-4 pb-24">
+        <div className="absolute inset-0 z-10 flex flex-col items-center pt-20 max-md:justify-center max-md:pt-0 px-4 pb-24">
           <img
             src={
               theme === "dark" ? "/images/dark-logo.png" : "/images/logo.png"
@@ -146,37 +146,23 @@ export default function Home() {
           </p>
 
           <p
-            className={`z-10 font-medium text-center mt-3 text-[clamp(14px,2.5vw,18px)] transition-colors duration-500
+            className={`z-10 font-semibold text-center mt-3 text-[clamp(16px,2.8vw,22px)] transition-colors duration-500 animate-pulse
     ${theme === "dark" ? "text-[#FFC2DA]" : "text-[#FFDEB1]"}`}
+            style={{ 
+              textShadow: theme === "dark" 
+                ? "0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 194, 218, 0.8), 0 0 30px rgba(255, 194, 218, 0.5)" 
+                : "0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 222, 177, 0.8), 0 0 30px rgba(255, 222, 177, 0.5)"
+            }}
           >
-            Applications open December 5, 2025 @ 12pm
+            Applications are now open!
           </p>
 
           <div
             className={`z-10 max-w-[619px] mt-8 rounded-[17px] p-7 flex flex-nowrap justify-center gap-3 
-    bg-gradient-to-br from-[rgba(52,42,127,0.8)] to-[rgba(36,8,53,0.8)] 
-    text-[clamp(0.65rem,1.3vw,1rem)] max-md:p-2 max-md:bg-none max-md:gap-2`}
+    text-[clamp(0.65rem,1.3vw,1rem)] max-md:p-2 max-md:gap-2`}
           >
-            {/* <button
-              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-pink-500/50
-              ${
-                theme === "dark"
-                  ? "bg-[#E87FD9] text-[#34144A] border-[#E87FD9] hover:bg-[#FF9FED]"
-                  : "bg-[#CCE4B4] text-[#34144A] border-[#CCE4B4] hover:bg-[#D4F0C2]"
-              }`}
-            >
-              <a
-                href="https://hackthecoast.susubc.ca" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover"
-              >
-                Hacker Applications
-              </a>
-            </button> */}
-
             <button
-              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50
+              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/70 shadow-2xl shadow-purple-500/50
               ${
                 theme === "dark"
                   ? "bg-[#7A4F8B] text-[#FFC2DA] border-[#7A4F8B] hover:bg-[#8E5FA0]"
@@ -194,7 +180,28 @@ export default function Home() {
             </button>
 
             <button
-              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-orange-400/50
+              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-pulse-shadow
+              ${
+                theme === "dark"
+                  ? "bg-[#E87FD9] text-[#34144A] border-[#E87FD9] hover:bg-[#FF9FED]"
+                  : "bg-[#CCE4B4] text-[#34144A] border-[#CCE4B4] hover:bg-[#D4F0C2]"
+              }`}
+              style={{
+                '--pulse-color': theme === "dark" ? 'rgba(232, 127, 217, 0.6)' : 'rgba(204, 228, 180, 0.6)'
+              } as React.CSSProperties}
+            >
+              <a
+                href="https://hackthecoast.susubc.ca" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover"
+              >
+                Hacker Applications
+              </a>
+            </button>
+
+            <button
+              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-orange-400/70 shadow-2xl shadow-orange-400/50
               ${
                 theme === "dark"
                   ? "bg-[#FFC2DA] text-[#34144A] border-[#FFC2DA] hover:bg-[#FFD4E8]"

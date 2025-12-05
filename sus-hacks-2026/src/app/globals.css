@@ -44,3 +44,16 @@ body {
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
 }
+
+@keyframes pulseShadow {
+  0%, 100% {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 25px 50px -12px var(--pulse-color), 0 0 30px var(--pulse-color);
+  }
+}
+
+.animate-pulse-shadow {
+  animation: pulseShadow 2s ease-in-out infinite;
+}
