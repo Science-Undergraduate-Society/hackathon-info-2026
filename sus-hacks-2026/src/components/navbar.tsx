@@ -41,7 +41,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
       } backdrop-blur-sm`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-[4.5rem]">
           {/* Logo */}
           <div className="flex-shrink-0">
             <button
@@ -66,7 +66,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className={`px-2 py-1 rounded-md text-sm font-medium transition-all hover:scale-105 ${
+                className={`px-2 py-1 rounded-md text-[0.938rem] font-medium transition-all hover:scale-105 ${
                   theme === "dark"
                     ? "hover:bg-[#E87FD9]/20"
                     : "hover:bg-[#FFDEB1]/20"
