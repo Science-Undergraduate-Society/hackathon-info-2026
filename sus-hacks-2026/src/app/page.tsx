@@ -125,7 +125,7 @@ export default function Home() {
     ${theme === "dark" ? "text-[#E87FD9]" : "text-[#FFDEB1]"}`}
           >
             <span>HACK</span>
-            <span className="self-start leading-[1] text-[clamp(14.45px,2.89vw,43.35px)]">
+            <span className="self-start leading-[1] text-a[clamp(14.45px,2.89vw,43.35px)]">
               THE
             </span>
             <span>COAST</span>
@@ -150,7 +150,7 @@ export default function Home() {
     bg-gradient-to-br from-[rgba(52,42,127,0.8)] to-[rgba(36,8,53,0.8)] 
     text-[clamp(0.65rem,1.3vw,1rem)] max-md:p-2 max-md:bg-none max-md:gap-2`}
           >
-            <button
+            {/* <button
               className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-pink-500/50
               ${
                 theme === "dark"
@@ -166,7 +166,7 @@ export default function Home() {
               >
                 Hacker Applications
               </a>
-            </button>
+            </button> */}
 
             <button
               className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50
