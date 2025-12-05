@@ -1,1 +1,0 @@
-This folder is for resusable components such as buttons, cards etc.
