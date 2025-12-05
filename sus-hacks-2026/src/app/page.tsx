@@ -106,7 +106,7 @@ export default function Home() {
         />
 
         {/* Content over image */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center pt-20 max-md:justify-center max-md:pt-0 px-4 pb-24">
+        <div className="absolute inset-0 z-10 flex flex-col items-center pt-40 max-md:justify-center max-md:pt-0 px-4 pb-24">
           <img
             src={
               theme === "dark" ? "/images/dark-logo.png" : "/images/logo.png"
