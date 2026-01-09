@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
     const icons = [
-        { src: "/images/email.png", alt: "Email", href: "mailto:<sales@sus.ubc.ca>" },
+        { src: "/images/email.png", alt: "Email", href: "mailto:<hackathon@sus.ubc.ca>" },
         { src: "/images/facebook.png", alt: "Facebook", href: "https://www.facebook.com/susubc/" },
         { src: "/images/instagram.png", alt: "Instagram", href: "https://www.instagram.com/susubc/" },
         { src: "/images/linkedin.png", alt: "LinkedIn", href: "https://www.linkedin.com/company/susubc/posts/?feedView=all" },
