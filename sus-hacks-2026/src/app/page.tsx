@@ -154,7 +154,7 @@ export default function Home() {
                 : "0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 222, 177, 0.8), 0 0 30px rgba(255, 222, 177, 0.5)"
             }}
           >
-            Applications are now closed.
+            Applications are now open and close on January 12, 2025!
           </p>
 
           <div
@@ -179,7 +179,7 @@ export default function Home() {
               </a>
             </button>
 
-            {/* <button
+            <button
               className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-pulse-shadow
               ${
                 theme === "dark"
@@ -198,7 +198,7 @@ export default function Home() {
               >
                 Hacker Applications
               </a>
-            </button> */}
+            </button>
 
             <button
               className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-orange-400/70 shadow-2xl shadow-orange-400/50
