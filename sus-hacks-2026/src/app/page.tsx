@@ -154,7 +154,7 @@ export default function Home() {
                 : "0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 222, 177, 0.8), 0 0 30px rgba(255, 222, 177, 0.5)"
             }}
           >
-            Applications are now open and close on February 12, 2025!
+            Applications are now open and close on January 12, 2025!
           </p>
 
           <div
