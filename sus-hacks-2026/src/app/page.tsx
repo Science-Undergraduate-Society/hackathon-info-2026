@@ -146,7 +146,7 @@ export default function Home() {
           </p>
 
           <p
-            className={`z-10 font-semibold text-center mt-3 text-[clamp(16px,2.8vw,22px)] transition-colors duration-500 animate-pulse
+            className={`z-10 font-semibold text-center mt-3 text-[clamp(16px,2.8vw,22px)]
     ${theme === "dark" ? "text-[#FFC2DA]" : "text-[#FFDEB1]"}`}
             style={{ 
               textShadow: theme === "dark" 
