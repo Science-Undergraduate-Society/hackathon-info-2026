@@ -93,16 +93,18 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
             </button> */}
 
             {/* SUS Logo */}
-            <button
-              onClick={() => scrollToSection("#home")}
-              className="hidden lg:flex items-center gap-2 hover:opacity-80 transition-opacity"
+            <a
+              className="hidden lg:flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer"
+              href="https://www.susubc.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src="/images/sus-logo-long.png"
                 alt="Logo"
                 className="h-35 w-35 object-contain"
               />
-            </button>
+            </a>
 
           </div>
 
