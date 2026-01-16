@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { Menu, X } from "lucide-react";
 import DarkModeToggle from "./darkModeToggle";
 
@@ -9,6 +9,18 @@ type Theme = "light" | "dark";
 type NavbarProps = {
   theme: Theme;
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+};
+
+const mlhBadgeStyle: CSSProperties = {
+  display: "block",
+  width: "60px",
+  minWidth: "50px",
+  marginTop: "32px",
+};
+
+const mlhBadgeImageStyle: CSSProperties = {
+  width: "100%",
+  height: "auto",
 };
 
 export default function Navbar({ theme, setTheme }: NavbarProps) {
@@ -38,11 +50,34 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
         theme === "dark" ? "text-[#FFC2DA]" : "text-[#FFDEB1]"
       } bg-transparent backdrop-blur-sm`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-5 px-5">
         <div className="flex items-center justify-between h-[4.5rem]">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <button
+
+          {/* Logos */}
+          
+          <div className="flex-shrink-0 flex gap-5 items-center">
+
+            {/* MLH Banner */}
+            <div 
+              className="hidden lg:flex"
+            >
+              <a
+                id="mlh-trust-badge"
+                href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={mlhBadgeStyle}
+              >
+                <img
+                  src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg"
+                  alt="Major League Hacking 2026 Hackathon Season"
+                  style={mlhBadgeImageStyle}
+                />
+              </a>
+            </div>
+
+            {/* HackTheCoast Logo */}
+            {/* <button
               onClick={() => scrollToSection("#home")}
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
@@ -55,11 +90,24 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
                 alt="Logo"
                 className="h-10 w-10 object-contain"
               />
+            </button> */}
+
+            {/* SUS Logo */}
+            <button
+              onClick={() => scrollToSection("#home")}
+              className="hidden lg:flex items-center gap-2 hover:opacity-80 transition-opacity"
+            >
+              <img
+                src="/images/sus-logo-long.png"
+                alt="Logo"
+                className="h-35 w-35 object-contain"
+              />
             </button>
+
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-4">
+          <div className="hidden lg:flex lg:items-center lg:space-x-4">
             {navLinks.map((link) => (
               <button
                 key={link.name}
@@ -77,7 +125,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
           </div>
 
           {/* Mobile controls */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <DarkModeToggle theme={theme} setTheme={setTheme} />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -92,7 +140,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <button
