@@ -34,11 +34,9 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
 
   return (
     <nav
-      className={`w-full z-40 transition-colors duration-300 ${
-        theme === "dark"
-          ? "bg-[#003476]/95 text-[#FFC2DA]"
-          : "bg-[#7A4F8B]/95 text-[#FFDEB1]"
-      } backdrop-blur-sm`}
+      className={`fixed top-0 left-0 w-full z-40 transition-colors duration-300 ${
+        theme === "dark" ? "text-[#FFC2DA]" : "text-[#FFDEB1]"
+      } bg-transparent backdrop-blur-sm`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[4.5rem]">

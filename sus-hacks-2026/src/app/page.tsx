@@ -93,7 +93,7 @@ export default function Home() {
         </button>
       )}
 
-      <div id="home" className="relative w-full bg-[#34144A]">
+      <div id="home" className="relative w-full bg-[#34144A] scroll-mt-[5.5rem]">
         <img
           src={
             theme === "dark"
@@ -106,7 +106,7 @@ export default function Home() {
         />
 
         {/* Content over image */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center pt-20 max-md:justify-center max-md:pt-0 px-4 pb-24">
+        <div className="absolute inset-0 z-10 flex flex-col items-center pt-40 max-md:justify-center max-md:pt-28 px-4 pb-24">
           <img
             src={
               theme === "dark" ? "/images/dark-logo.png" : "/images/logo.png"
@@ -233,26 +233,26 @@ export default function Home() {
 
       {/* Top Sections */}
 
-      <div id="about" className="transition-all duration-500">
+      <div id="about" className="transition-all duration-500 scroll-mt-[5.5rem]">
         <GeneralInformation theme={theme} />
       </div>
-      <div id="who-its-for" className="transition-all duration-500">
+      <div id="who-its-for" className="transition-all duration-500 scroll-mt-[5.5rem]">
         <WhoItsFor theme={theme} />
       </div>
 
       {/* Bottom Sections */}
 
       <BottomSectionShell theme={theme}>
-        <div id="what-to-expect" className="transition-all duration-500">
+        <div id="what-to-expect" className="transition-all duration-500 scroll-mt-[5.5rem]">
           <WhatToExpect />
         </div>
-        <div id="schedule" className="transition-all duration-500">
+        <div id="schedule" className="transition-all duration-500 scroll-mt-[5.5rem]">
           <Itinerary />
         </div>
-        <div id="faq" className="transition-all duration-500">
+        <div id="faq" className="transition-all duration-500 scroll-mt-[5.5rem]">
           <FAQ />
         </div>
-        <div id="team" className="transition-all duration-500">
+        <div id="team" className="transition-all duration-500 scroll-mt-[5.5rem]">
           <MeetOurTeam theme={theme} />
         </div>
         <Footer />
