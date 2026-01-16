@@ -33,7 +33,14 @@ export default function Footer() {
                         ))}
                     </div>
 
-                    <p className="text-center mt-3 text-white text-[clamp(0.8rem,1vw,1rem)]">
+                    <a 
+                        className="underline text-white text-center"
+                        target="blank"
+                        href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">
+                        MLH Code of Conduct
+                    </a>
+
+                    <p className="text-center text-white text-[clamp(0.8rem,1vw,1rem)]">
                         Copyright © 2025 UBC Science Undergraduate Society
                     </p>
                 </div>
