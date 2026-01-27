@@ -16,6 +16,7 @@ import Footer from "../../sections/bottom-section-components/footer";
 import MeetOurTeam from "../../sections/bottom-section-components/meet-our-team";
 import BottomSectionShell from "../../sections/bottom-section-components/bottom-section-shell";
 import GeneralInformation from "../../sections/top-section-components/general-information";
+import Sponsors from "../../sections/bottom-section-components/sponsors";
 
 type Theme = "light" | "dark";
 
@@ -255,6 +256,10 @@ export default function Home() {
         <div id="team" className="transition-all duration-500 scroll-mt-[5.5rem]">
           <MeetOurTeam theme={theme} />
         </div>
+        <div id="sponsors" className="transition-all duration-500 scroll-mt-[5.5rem]">
+          <Sponsors />
+        </div>
+        
         <Footer />
       </BottomSectionShell>
     </div>
