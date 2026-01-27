@@ -35,7 +35,7 @@ export default function Sponsors() {
             <img
                 src="/images/end_background.png"
                 alt="Background"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover -mt-[600px]"
             />
             
             {/* Content */}
