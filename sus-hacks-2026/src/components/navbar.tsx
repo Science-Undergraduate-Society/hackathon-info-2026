@@ -34,6 +34,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
     { name: "Schedule", href: "#schedule" },
     { name: "FAQ", href: "#faq" },
     { name: "Team", href: "#team" },
+    { name: "Sponsors", href: "#sponsors"}
   ];
 
   const scrollToSection = (href: string) => {
@@ -114,7 +115,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className={`px-2 py-1 rounded-md text-[0.938rem] font-medium transition-all hover:scale-105 ${
+                className={`px-2 py-1 rounded-md text-[0.938rem] font-medium transition-all hover:scale-105 cursor-pointer ${
                   theme === "dark"
                     ? "hover:bg-[#E87FD9]/20"
                     : "hover:bg-[#FFDEB1]/20"
@@ -131,7 +132,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
             <DarkModeToggle theme={theme} setTheme={setTheme} />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md hover:bg-white/10 transition-colors"
+              className="p-2 rounded-md hover:bg-white/10 transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -148,7 +149,7 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className={`block w-full text-left px-2 py-1 rounded-md text-base font-medium transition-all ${
+                className={`block w-full text-left px-2 py-1 rounded-md text-base font-medium transition-all cursor-pointer ${
                   theme === "dark"
                     ? "hover:bg-[#E87FD9]/20"
                     : "hover:bg-[#FFDEB1]/20"

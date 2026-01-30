@@ -259,7 +259,6 @@ export default function Home() {
         <div id="sponsors" className="transition-all duration-500 scroll-mt-[5.5rem]">
           <Sponsors />
         </div>
-        
         <Footer />
       </BottomSectionShell>
     </div>
