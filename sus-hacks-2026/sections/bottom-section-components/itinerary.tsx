@@ -18,8 +18,8 @@ type DaySchedule = {
 
 export default function Itinerary() {
   const [openDay, setOpenDay] = useState<number | null>(null);
-  const [venueMapOpen, setVenueMapOpen] = useState(true);
-  const [expoMapOpen, setExpoMapOpen] = useState(true);
+  const [venueMapOpen, setVenueMapOpen] = useState(false);
+  const [expoMapOpen, setExpoMapOpen] = useState(false);
 
   const schedule: DaySchedule[] = [
     {
