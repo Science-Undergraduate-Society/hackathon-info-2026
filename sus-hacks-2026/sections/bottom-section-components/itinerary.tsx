@@ -19,7 +19,6 @@ type DaySchedule = {
 export default function Itinerary() {
   const [openDay, setOpenDay] = useState<number | null>(null);
   const [venueMapOpen, setVenueMapOpen] = useState(false);
-  const [expoMapOpen, setExpoMapOpen] = useState(false);
 
   const schedule: DaySchedule[] = [
     {
@@ -225,7 +224,7 @@ export default function Itinerary() {
             </div>
           ))}
 
-          {/* Venue LSI Map Section */}
+          {/* Venue Map Section */}
           <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-[#7A4F8B]/90 to-[#34144A]/90 backdrop-blur-sm border-2 border-[#E87FD9]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30">
             <button
               onClick={() => setVenueMapOpen(!venueMapOpen)}
@@ -243,142 +242,26 @@ export default function Itinerary() {
               />
             </button>
             
-                <div
-                  className={`grid transition-all duration-300 ease-out ${
-                    venueMapOpen
-                      ? "grid-rows-[1fr] opacity-100"
-                      : "grid-rows-[0fr] opacity-0"
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="flex flex-col md:flex-row gap-4 p-6">
-                  {/* Main LSI Map */}
-                  <div className="md:w-1/2 rounded-2xl overflow-hidden bg-gradient-to-br from-[#7A4F8B]/90 to-[#34144A]/90 backdrop-blur-sm border-2 border-[#E87FD9]/30 p-4">
-                    <div className="bg-[#34144A]/50 rounded-xl overflow-hidden">
-                      <Image
-                        src="/images/maps/lsi_map.png"
-                        alt="LSI Venue Map"
-                        width={800}
-                        height={450}
-                        className="w-full h-auto max-h-[400px] object-contain"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Zoomed LSI Map */}
-                  <div className="md:w-1/2 rounded-2xl overflow-hidden bg-gradient-to-br from-[#7A4F8B]/90 to-[#34144A]/90 backdrop-blur-sm border-2 border-[#E87FD9]/30 p-4">
-                    <div className="bg-[#34144A]/50 rounded-xl overflow-hidden">
-                      <Image
-                        src="/images/maps/hacking_space.png"
-                        alt="Detailed Hacking Space Map"
-                        width={800}
-                        height={450}
-                        className="w-full h-auto max-h-[400px] object-contain"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Booth Assignments - Horizontal Layout */}
-                <div className="rounded-2xl overflow-hidden p-6 mt-6">
-                  <h4 className="font-bold text-[clamp(1rem,1.8vw,1.3rem)] mb-4 text-center">
-                    Booth Assignments
-                  </h4>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {/* Clubs & Organizations */}
-                    <div className="bg-[#34144A]/50 rounded-xl p-4 border border-[#E87FD9]/20s">
-                      <h5 className="font-bold text-[clamp(0.95rem,1.5vw,1.1rem)] mb-3 text-[#E87FD9]">
-                        Clubs & Organizations
-                      </h5>
-                      <ul className="space-y-2 text-[clamp(0.8rem,1.2vw,0.95rem)]">
-                        <li><span className="font-semibold">A.</span> UBC Biotechnology</li>
-                        <li><span className="font-semibold">B.</span> Notion @ UBC</li>
-                        <li><span className="font-semibold">C.</span> Women in CS</li>
-                        <li><span className="font-semibold">D.</span> Figma @ UBC</li>
-                        <li><span className="font-semibold">E.</span> AI Safety</li>
-                        <li><span className="font-semibold">F.</span> Women in Science</li>
-                        <li><span className="font-semibold">G.</span> Women in Data Science</li>
-                        <li><span className="font-semibold">H.</span> BEST</li>
-                        <li><span className="font-semibold">I.</span> Thunderbots</li>
-                        <li><span className="font-semibold">J.</span> Thunderbots</li>
-                        <li><span className="font-semibold">O.</span> SUS Sustainability</li>
-                        <li><span className="font-semibold">P.</span> SUS Academic</li>
-                      </ul>
-                    </div>
-
-                    {/* Sponsors */}
-                    <div className="bg-[#34144A]/50 rounded-xl p-4 border border-[#E87FD9]/20s">
-                      <h5 className="font-bold text-[clamp(0.95rem,1.5vw,1.1rem)] mb-3 text-[#E87FD9]">
-                        Sponsors
-                      </h5>
-                      <ul className="space-y-2 text-[clamp(0.8rem,1.2vw,0.95rem)]">
-                        <li><span className="font-semibold">K.</span> MLH</li>
-                        <li><span className="font-semibold">L.</span> SAP</li>
-                        <li><span className="font-semibold">M.</span> SmartCohort</li>
-                        <li><span className="font-semibold">N.</span> Deloitte</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Project Expo Map Section */}
-          <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-[#7A4F8B]/90 to-[#34144A]/90 backdrop-blur-sm border-2 border-[#E87FD9]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30">
-            <button
-              onClick={() => setExpoMapOpen(!expoMapOpen)}
-              className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors duration-200"
-            >
-              <div className="flex items-center gap-4">
-                <h3 className="font-bold text-[clamp(1.2rem,2vw,1.5rem)]">
-                  Project Expo Map
-                </h3>
-              </div>
-              <ChevronDown
-                className={`w-6 h-6 transition-transform duration-300 ${
-                  expoMapOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-        
             <div
               className={`grid transition-all duration-300 ease-out ${
-                expoMapOpen
+                venueMapOpen
                   ? "grid-rows-[1fr] opacity-100"
                   : "grid-rows-[0fr] opacity-0"
               }`}
             >
               <div className="overflow-hidden">
                 <div className="p-6">
-                  <div className="flex flex-col md:flex-row gap-4 mb-6">
-              {/* Main Expo Map */}
-              <div className="md:w-1/2 rounded-2xl overflow-hidden bg-gradient-to-br from-[#7A4F8B]/90 to-[#34144A]/90 backdrop-blur-sm border-2 border-[#E87FD9]/30 p-4">
-                <div className="bg-[#34144A]/50 rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/maps/lsi_map_expo.png"
-                    alt="Project Expo Map"
-                    width={800}
-                    height={450}
-                    className="w-full h-auto max-h-[400px] object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* Detailed Expo Seating Map */}
-              <div className="md:w-1/2 rounded-2xl overflow-hidden bg-gradient-to-br from-[#7A4F8B]/90 to-[#34144A]/90 backdrop-blur-sm border-2 border-[#E87FD9]/30 p-4">
-                <div className="bg-[#34144A]/50 rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/maps/expo_seating.png"
-                    alt="Detailed Expo Seating Map"
-                    width={800}
-                    height={450}
-                    className="w-full h-auto max-h-[400px] object-contain"
-                  />
-                </div>
-              </div>
-            </div>
+                  <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-[#7A4F8B]/90 to-[#34144A]/90 backdrop-blur-sm border-2 border-[#E87FD9]/30 p-4">
+                    <div className="bg-[#34144A]/50 rounded-xl overflow-hidden">
+                      <Image
+                        src="/images/maps/map.svg"
+                        alt="Venue Map"
+                        width={800}
+                        height={450}
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
