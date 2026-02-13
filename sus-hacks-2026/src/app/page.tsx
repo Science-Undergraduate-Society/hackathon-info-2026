@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import DarkModeToggle from "../components/darkModeToggle";
 import Navbar from "../components/navbar";
 import { ChevronUp } from "lucide-react"
@@ -139,12 +140,12 @@ export default function Home() {
             UBC Science Undergraduate Society&apos;s first-ever Hackathon
           </p>
 
-          <p
+          {/* <p
             className={`z-10 font-semibold text-center mt-2 text-[clamp(16.62px,3.25vw,28.9px)] transition-colors duration-500
     ${theme === "dark" ? "text-[#E87FD9]" : "text-[#833872]"}`}
           >
             February 7-8, 2026
-          </p>
+          </p> */}
 
           <p
             className={`z-10 font-semibold text-center mt-3 text-[clamp(16px,2.8vw,22px)]
@@ -155,69 +156,35 @@ export default function Home() {
                 : "0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 222, 177, 0.8), 0 0 30px rgba(255, 222, 177, 0.5)"
             }}
           >
-            Applications are now closed.
+            Hack the Coast 2026 has concluded!
+          </p>
+
+          <p
+            className={`z-10 font-semibold text-center mt-2 text-[clamp(14px,2.4vw,18px)]
+    ${theme === "dark" ? "text-[#CCE4B4]" : "text-[#FFDEB1]"}]`}
+          >
+            Stay tuned for Hack the Coast 2027!
           </p>
 
           <div
             className={`z-10 max-w-[619px] mt-8 rounded-[17px] p-7 flex flex-nowrap justify-center gap-3 
     text-[clamp(0.65rem,1.3vw,1rem)] max-md:p-2 max-md:gap-2`}
           >
-            <button
-              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/70 shadow-2xl shadow-purple-500/50
-              ${
-                theme === "dark"
-                  ? "bg-[#7A4F8B] text-[#FFC2DA] border-[#7A4F8B] hover:bg-[#8E5FA0]"
-                  : "bg-[#833872] text-[#FFDEB1] border-[#833872] hover:bg-[#9A4587]"
-              }`}
-            >
-              <a
-                href="https://docs.google.com/forms/d/1YLFxByN3PW6BRcyOJyunwSJKMYeQbX9MGGbzY1VJB3c/viewform?edit_requested=true&edit_requested=true" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover"
+            <Link href="/winners">
+              <button
+                className={`leading-none border-2 w-[168px] max-md:w-[130px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-pulse-shadow
+                ${
+                  theme === "dark"
+                    ? "bg-[#E87FD9] text-[#34144A] border-[#E87FD9] hover:bg-[#FF9FED]"
+                    : "bg-[#CCE4B4] text-[#34144A] border-[#CCE4B4] hover:bg-[#D4F0C2]"
+                }`}
+                style={{
+                  '--pulse-color': theme === "dark" ? 'rgba(232, 127, 217, 0.6)' : 'rgba(204, 228, 180, 0.6)'
+                } as React.CSSProperties}
               >
-                Mentor Applications
-              </a>
-            </button>
-
-            {/* <button
-              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-pulse-shadow
-              ${
-                theme === "dark"
-                  ? "bg-[#E87FD9] text-[#34144A] border-[#E87FD9] hover:bg-[#FF9FED]"
-                  : "bg-[#CCE4B4] text-[#34144A] border-[#CCE4B4] hover:bg-[#D4F0C2]"
-              }`}
-              style={{
-                '--pulse-color': theme === "dark" ? 'rgba(232, 127, 217, 0.6)' : 'rgba(204, 228, 180, 0.6)'
-              } as React.CSSProperties}
-            >
-              <a
-                href="https://hackthecoast.susubc.ca" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover"
-              >
-                Hacker Applications
-              </a>
-            </button> */}
-
-            <button
-              className={`leading-none border-2 w-[168px] max-md:w-[110px] rounded-[17px] p-2.5 max-md:p-2 opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-orange-400/70 shadow-2xl shadow-orange-400/50
-              ${
-                theme === "dark"
-                  ? "bg-[#FFC2DA] text-[#34144A] border-[#FFC2DA] hover:bg-[#FFD4E8]"
-                  : "bg-[#FFDEB1] text-[#34144A] border-[#FFDEB1] hover:bg-[#FFE8C8]"
-              }`}
-            >
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSehHDfo4VJY3rCKPy72TPAkk8X69DnI5SKLloAPd6pcF1eTig/viewform" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover"
-              >
-                Interested in sponsoring us?
-              </a>
-            </button>
+                View Winners
+              </button>
+            </Link>
             {/* <button
               className={`leading-none border-2 w-[198px] rounded-[20px] p-3 opacity-100
               ${

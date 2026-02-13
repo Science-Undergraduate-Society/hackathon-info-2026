@@ -2,6 +2,7 @@
 
 import { useState, type CSSProperties } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import DarkModeToggle from "./darkModeToggle";
 
 type Theme = "light" | "dark";
@@ -27,14 +28,15 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Who It's For", href: "#who-its-for" },
-    { name: "What to Expect", href: "#what-to-expect" },
-    { name: "Schedule", href: "#schedule" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Team", href: "#team" },
-    { name: "Sponsors", href: "#sponsors"}
+    { name: "Home", href: "#home", type: "scroll" },
+    { name: "About", href: "#about", type: "scroll" },
+    { name: "Who It's For", href: "#who-its-for", type: "scroll" },
+    { name: "What to Expect", href: "#what-to-expect", type: "scroll" },
+    { name: "Schedule", href: "#schedule", type: "scroll" },
+    { name: "FAQ", href: "#faq", type: "scroll" },
+    { name: "Team", href: "#team", type: "scroll" },
+    { name: "Sponsors", href: "#sponsors", type: "scroll" },
+    { name: "Winners", href: "/winners", type: "link" }
   ];
 
   const scrollToSection = (href: string) => {
@@ -111,19 +113,33 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollToSection(link.href)}
-                className={`px-2 py-1 rounded-md text-[0.938rem] font-medium transition-all hover:scale-105 cursor-pointer ${
-                  theme === "dark"
-                    ? "hover:bg-[#E87FD9]/20"
-                    : "hover:bg-[#FFDEB1]/20"
-                }`}
-              >
-                {link.name}
-              </button>
-            ))}
+            {navLinks.map((link) =>
+              link.type === "link" ? (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-2 py-1 rounded-md text-[0.938rem] font-medium transition-all hover:scale-105 cursor-pointer ${
+                    theme === "dark"
+                      ? "hover:bg-[#E87FD9]/20"
+                      : "hover:bg-[#FFDEB1]/20"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <button
+                  key={link.name}
+                  onClick={() => scrollToSection(link.href)}
+                  className={`px-2 py-1 rounded-md text-[0.938rem] font-medium transition-all hover:scale-105 cursor-pointer ${
+                    theme === "dark"
+                      ? "hover:bg-[#E87FD9]/20"
+                      : "hover:bg-[#FFDEB1]/20"
+                  }`}
+                >
+                  {link.name}
+                </button>
+              )
+            )}
             <DarkModeToggle theme={theme} setTheme={setTheme} />
           </div>
 
@@ -145,19 +161,34 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
       {isOpen && (
         <div className="lg:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollToSection(link.href)}
-                className={`block w-full text-left px-2 py-1 rounded-md text-base font-medium transition-all cursor-pointer ${
-                  theme === "dark"
-                    ? "hover:bg-[#E87FD9]/20"
-                    : "hover:bg-[#FFDEB1]/20"
-                }`}
-              >
-                {link.name}
-              </button>
-            ))}
+            {navLinks.map((link) =>
+              link.type === "link" ? (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block w-full text-left px-2 py-1 rounded-md text-base font-medium transition-all cursor-pointer ${
+                    theme === "dark"
+                      ? "hover:bg-[#E87FD9]/20"
+                      : "hover:bg-[#FFDEB1]/20"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <button
+                  key={link.name}
+                  onClick={() => scrollToSection(link.href)}
+                  className={`block w-full text-left px-2 py-1 rounded-md text-base font-medium transition-all cursor-pointer ${
+                    theme === "dark"
+                      ? "hover:bg-[#E87FD9]/20"
+                      : "hover:bg-[#FFDEB1]/20"
+                  }`}
+                >
+                  {link.name}
+                </button>
+              )
+            )}
           </div>
         </div>
       )}
