@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Home } from "lucide-react";
@@ -9,11 +8,12 @@ interface Team {
   name: string;
   description: string;
   image?: string;
+  devpost?: string;
 }
 
 interface Stream {
   title: string;
-  color: string;
+  badgeColor: string;
   sponsor?: string;
   sponsorLogo?: string;
   teams: Team[];
@@ -22,123 +22,60 @@ interface Stream {
 const streamsData: Stream[] = [
   {
     title: "Health Tech & Bio Innovation",
-    color: "bg-gradient-to-br from-purple-600 to-pink-600",
-    sponsor: "SAP",
+    badgeColor: "bg-cyan-400",
     teams: [
       {
-        name: "Team 1 Name",
-        description: "Insert project description here",
-        image: "/images/winners/health_stream_winner.JPG"
-      },
-      {
-        name: "Team 2 Name",
-        description: "Insert project description here"
-      },
-      {
-        name: "Team 3 Name",
-        description: "Insert project description here"
+        name: "HappyNappy",
+        description: "The Nap That Knows You so You Wake Up Refreshed",
+        image: "/images/winners/health_stream_winner.JPG",
+        devpost: "https://devpost.com/software/happynappy?_gl=1*iv7q4x*_gcl_au*NjI2ODE1OTQxLjE3NzA1ODQyNTk.*_ga*OTQ2NjMxNDYwLjE3NzA1ODQyNjA.*_ga_0YHJK3Y10M*czE3NzA5NDMyMzkkbzIkZzEkdDE3NzA5NDM0ODYkajYwJGwwJGgw"
       }
     ]
   },
   {
     title: "Sustainability & Environment",
-    color: "bg-gradient-to-br from-purple-700 to-purple-900",
+    badgeColor: "bg-teal-400",
     sponsor: "SAP",
+    sponsorLogo: "/images/sponsors/sap.png",
     teams: [
       {
-        name: "Team 2 Name",
-        description: "Insert project description here",
-        image: "/images/winners/sustainability_stream_winner.JPG"
+        name: "Rasterye",
+        description: "A garden planning tool for smart crop rotation. Map your garden, log what you grow, get optimized planting plans.",
+        image: "/images/winners/sustainability_stream_winner.JPG",
+        devpost: "https://devpost.com/software/rasterye?_gl=1*4amaa6*_gcl_au*NjI2ODE1OTQxLjE3NzA1ODQyNTk.*_ga*OTQ2NjMxNDYwLjE3NzA1ODQyNjA.*_ga_0YHJK3Y10M*czE3NzA5NDMyMzkkbzIkZzEkdDE3NzA5NDM0NDgkajYkbDAkaDA"
       }
     ]
   },
   {
     title: "Science Tech for Social Good",
-    color: "bg-gradient-to-br from-purple-700 to-purple-900",
+    badgeColor: "bg-purple-400",
+    sponsor: "Smart Cohort",
+    sponsorLogo: "/images/sponsors/smartcohort.png",
     teams: [
       {
-        name: "Team 3 Name",
-        description: "Insert project description here",
-        image: "/images/winners/social_good_stream_winner.JPG"
+        name: "Telebuddy",
+        description: "The no-shake solder bot. With tele-augmented control, we allow AR operation for soldering practice, and apply a smoothing algorithm for mirrored movements to assist those with motor disorders.",
+        image: "/images/winners/social_good_stream_winner.JPG",
+        devpost: "https://devpost.com/software/park-e-rmejf2?_gl=1*xryuh2*_gcl_au*NjI2ODE1OTQxLjE3NzA1ODQyNTk.*_ga*OTQ2NjMxNDYwLjE3NzA1ODQyNjA.*_ga_0YHJK3Y10M*czE3NzA5NDMyMzkkbzIkZzEkdDE3NzA5NDMyNjYkajMzJGwwJGgw"
       }
     ]
   }
 ];
 
 export default function WinnersPage() {
-  const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
-  const [pinnedCard, setPinnedCard] = useState<string | null>(null);
-
-  const handleTeamClick = (teamName: string) => {
-    if (pinnedCard === teamName) {
-      setPinnedCard(null);
-    } else {
-      setPinnedCard(teamName);
-    }
-  };
-
-  const handleTeamHover = (teamName: string) => {
-    if (!pinnedCard) {
-      setSelectedTeam(teamName);
-    }
-  };
-
-  const handleTeamLeave = () => {
-    if (!pinnedCard) {
-      setSelectedTeam(null);
-    }
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-950 via-purple-900 to-blue-950 text-white relative overflow-hidden">
-      {/* Decorative cityscape at top */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-blue-900 to-transparent opacity-50">
-        <div className="flex justify-around items-end h-full">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="bg-blue-900 opacity-70"
-              style={{
-                width: `${Math.random() * 30 + 10}px`,
-                height: `${Math.random() * 40 + 20}px`
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Decorative cityscape at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden">
-        <div className="flex justify-around items-end h-full">
-          {[...Array(30)].map((_, i) => (
-            <div
-              key={i}
-              className="bg-blue-900"
-              style={{
-                width: `${Math.random() * 40 + 15}px`,
-                height: `${Math.random() * 80 + 40}px`
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Stars background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(100)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute bg-white rounded-full animate-pulse"
-            style={{
-              width: `${Math.random() * 3}px`,
-              height: `${Math.random() * 3}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${Math.random() * 3 + 2}s`
-            }}
-          />
-        ))}
+    <div className="min-h-screen text-white relative overflow-hidden">
+      {/* Background Image */}
+      <div className="fixed inset-0 z-0">
+        <Image
+          src="/images/winners_bg.png"
+          alt="Winners Background"
+          fill
+          className="object-fill"
+          priority
+          quality={100}
+        />
       </div>
 
       {/* Home button */}
@@ -150,14 +87,22 @@ export default function WinnersPage() {
       </Link>
 
       {/* Main content */}
-      <div className="relative z-10 container mx-auto px-4 py-16">
+      <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="w-20 h-20 mx-auto mb-6 border-4 border-white rounded-full flex items-center justify-center">
-            <div className="text-3xl">⛵</div>
+        <div className="text-center mb-12">
+          {/* Logo */}
+          <div className="w-24 h-24 mx-auto mb-6 relative">
+            <Image
+              src="/images/dark-logo.png"
+              alt="Hack the Coast Logo"
+              fill
+              className="object-contain"
+            />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-2">
-            <span className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
+          
+          {/* Title */}
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-2 uppercase">
+            <span className="bg-gradient-to-r from-[#E87FD9] via-[#E87FD9] to-[#E87FD9] bg-clip-text text-transparent">
               HACK THE COAST
             </span>
           </h1>
@@ -166,77 +111,16 @@ export default function WinnersPage() {
           </h2>
         </div>
 
-        {/* Timeline and Cards Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
-          {/* Left Timeline */}
-          <div className="lg:w-48 flex lg:flex-col justify-around lg:justify-start lg:space-y-12 lg:pt-32">
-            <p className="text-sm text-cyan-300 mb-4 hidden lg:block">
-              hover over team name to show cards, disappears when mouse moves away
-              <br /><br />
-              or click to keep card open
-            </p>
-            {["Team 1", "Team 2", "Team 3"].map((team, index) => (
-              <div
-                key={team}
-                className="flex items-center gap-4 cursor-pointer group"
-                onMouseEnter={() => handleTeamHover(team)}
-                onMouseLeave={handleTeamLeave}
-                onClick={() => handleTeamClick(team)}
-              >
-                <div className="flex flex-col items-center">
-                  <div
-                    className={`w-4 h-4 rounded-full transition-all ${
-                      selectedTeam === team || pinnedCard === team
-                        ? "bg-cyan-400 scale-150"
-                        : "bg-cyan-600 group-hover:bg-cyan-400"
-                    }`}
-                  />
-                  {index < 2 && (
-                    <div className="w-0.5 h-16 bg-cyan-600 mt-2 hidden lg:block" />
-                  )}
-                </div>
-                <span
-                  className={`text-lg transition-colors ${
-                    selectedTeam === team || pinnedCard === team
-                      ? "text-cyan-300"
-                      : "text-white/70 group-hover:text-white"
-                  }`}
-                >
-                  {team} Name
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Cards Grid */}
-          <div className="flex-1 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {streamsData.map((stream, streamIndex) => (
-              <div
-                key={streamIndex}
-                className={`${stream.color} rounded-3xl p-6 shadow-2xl transition-all duration-300 ${
-                  selectedTeam &&
-                  stream.teams.some((t) => t.name.includes(selectedTeam.split(" ")[1]))
-                    ? "scale-105 opacity-100"
-                    : selectedTeam || pinnedCard
-                    ? "opacity-50 scale-95"
-                    : "opacity-100"
-                }`}
-              >
-                {/* Badge */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="bg-cyan-400 text-blue-900 px-4 py-1 rounded-full text-sm font-semibold">
-                    {stream.title}
-                  </span>
-                  {stream.sponsor && (
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-white/80">Sponsored by</span>
-                      <span className="text-white font-bold">{stream.sponsor}</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Image placeholder */}
-                <div className="bg-gray-200 rounded-xl h-48 mb-4 overflow-hidden">
+        {/* Cards - Vertical Stack */}
+        <div className="space-y-16">
+          {streamsData.map((stream, streamIndex) => (
+            <div
+              key={streamIndex}
+              className="flex flex-col md:flex-row gap-6 bg-transparent"
+            >
+              {/* Image on Left */}
+              <div className="md:w-80 flex-shrink-0">
+                <div className="bg-gray-200 rounded-xl overflow-hidden h-64 md:h-full min-h-[250px]">
                   {stream.teams[0]?.image ? (
                     <Image
                       src={stream.teams[0].image}
@@ -246,20 +130,63 @@ export default function WinnersPage() {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray-400">
+                    <div className="w-full h-full flex items-center justify-center text-gray-500">
                       Winner Photo
                     </div>
                   )}
                 </div>
-
-                {/* Team info */}
-                <div>
-                  <h3 className="text-xl font-bold mb-2">{stream.teams[0]?.name}</h3>
-                  <p className="text-white/80 text-sm">{stream.teams[0]?.description}</p>
-                </div>
               </div>
-            ))}
-          </div>
+
+              {/* Content on Right */}
+              <div className="flex-1 flex flex-col justify-center">
+                {/* Badge and Sponsor Row */}
+                <div className="flex items-center gap-3 mb-4 flex-wrap">
+                  <span className={`${stream.badgeColor} text-white px-8 py-3.5 rounded-full text-sm font-semibold`} style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)' }}>
+                    {stream.title}
+                  </span>
+                  {stream.sponsor && (
+                    <div className="flex items-center gap-2 text-ms">
+                      <span className="text-white/80">Sponsored by</span>
+                      {stream.sponsorLogo ? (
+                        <Image
+                          src={stream.sponsorLogo}
+                          alt={stream.sponsor}
+                          width={400}
+                          height={400}
+                          className="h-10 w-auto object-contain"
+                        />
+                      ) : (
+                        <span className="text-white font-bold">{stream.sponsor}</span>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                {/* Team Name */}
+                <h3 className="text-2xl md:text-3xl font-bold mb-3">{stream.teams[0]?.name}</h3>
+                
+                {/* Description */}
+                <p className="text-white/80 text-base mb-4 leading-relaxed">
+                  {stream.teams[0]?.description}
+                </p>
+
+                {/* Devpost Link */}
+                {stream.teams[0]?.devpost && (
+                  <a
+                    href={stream.teams[0].devpost}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-200 text-sm font-medium transition-colors"
+                  >
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M6.002 1.61L0 12.004L6.002 22.39h11.996L24 12.004L17.998 1.61H6.002zm1.593 4.084h8.81l3.474 6.31l-3.473 6.31H7.595l-3.474-6.31L7.595 5.694z"/>
+                    </svg>
+                    View on Devpost
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
