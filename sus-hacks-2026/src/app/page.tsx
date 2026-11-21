@@ -163,7 +163,7 @@ export default function Home() {
             className={`z-10 font-semibold text-center mt-2 text-[clamp(14px,2.4vw,18px)]
     ${theme === "dark" ? "text-[#CCE4B4]" : "text-[#FFDEB1]"}]`}
           >
-            Stay tuned for Hack the Coast 2027!
+            Hack the Coast returns February 27-28, 2027!
           </p>
 
           <div
